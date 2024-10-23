@@ -104,7 +104,9 @@
               <tr v-for="(item, index) in beholder.inventory" :key="index" class="item">
                 <td>
                   <label>
-                    <input type="checkbox" v-model="item.equipped" />
+                    <input type="checkbox"
+                           :checked="item.equipped"
+                           @change="toggleItemEffect(item)" />
                     <strong>{{ item.name }}</strong>
                   </label>
                 </td>
