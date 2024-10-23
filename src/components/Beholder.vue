@@ -16,8 +16,6 @@
               </div>
               <button @click="startNewRound">Start New Round</button>
             </div>
-
-
           </div>
 
           <div class="stats-lair-actions">
@@ -62,10 +60,7 @@
                 </div>
               </div>
             </div>
-
           </div>
-
-
 
           <div class="actions-lair-actions">
             <h2>Actions</h2>
@@ -94,14 +89,36 @@
               </tbody>
             </table>
           </div>
+
           <div class="inventory">
             <h2>Inventory</h2>
-            <div v-for="(item, index) in beholder.inventory" :key="index" class="item">
-              <label>
-                <input type="checkbox" :checked="item.equipped" @change="toggleItemEffect(item)" />
-                <strong>{{ item.name }}</strong>: {{ item.description }}
-              </label>
-            </div>
+            <table>
+              <thead>
+              <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Charges</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr v-for="(item, index) in beholder.inventory" :key="index" class="item">
+                <td>
+                  <label>
+                    <input type="checkbox" v-model="item.equipped" />
+                    <strong>{{ item.name }}</strong>
+                  </label>
+                </td>
+                <td>{{ item.description }}</td>
+                <td>
+                  <div v-if="item.charges > 0">
+                    <label v-for="n in item.charges" :key="n">
+                      <input type="checkbox" />
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -245,10 +262,10 @@ export default {
   margin-top: 0; /* Remove top margin to align with labels */
 }
 
-.ac-label, .hp-label {
+.ac-label,
+.hp-label {
   margin: 0; /* Reset margin for consistent height */
 }
-
 
 .full-width-wrapper {
   width: 95vw;
@@ -266,7 +283,8 @@ export default {
   width: 100%;
 }
 
-.left-column, .right-column {
+.left-column,
+.right-column {
   flex: 1;
   margin: 0 10px;
 }
@@ -281,7 +299,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 0.5rem;
   border: 1px solid #ccc;
   text-align: left;
@@ -291,3 +310,4 @@ th {
   color: white;
 }
 </style>
+
