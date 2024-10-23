@@ -114,7 +114,7 @@
                 <td>
                   <div v-if="item.charges > 0">
                     <label v-for="n in item.charges" :key="n">
-                      <input type="checkbox" />
+                      <input type="checkbox" @change="(event) => { if (event.target.checked) { event.target.disabled = true; } }" />
                     </label>
                   </div>
                 </td>
