@@ -1,0 +1,176 @@
+{
+  "name": "Beholder",
+  "ac": 17,
+  "hp": 360,
+  "stats": {
+    "strength": { "value": 10, "save": 0 },
+    "dexterity": { "value": 12, "save": 2 },
+    "constitution": { "value": 18, "save": 4 },
+    "intelligence": { "value": 20, "save": 8 },
+    "wisdom": { "value": 15, "save": 7 },
+    "charisma": { "value": 17, "save": 8 }
+  },
+  "eyeRays": [
+    {
+      "roll": 1,
+      "name": "Charm Ray",
+      "description": "The targeted creature must succeed on a DC 20 Wisdom saving throw or be charmed by the beholder for 1 hour, or until the beholder harms the creature."
+    },
+    {
+      "roll": 2,
+      "name": "Paralyzing Ray",
+      "description": "The targeted creature must succeed on a DC 20 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    },
+    {
+      "roll": 3,
+      "name": "Fear Ray",
+      "description": "The targeted creature must succeed on a DC 20 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    },
+    {
+      "roll": 4,
+      "name": "Slowing Ray",
+      "description": "The targeted creature must succeed on a DC 20 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. It can't take reactions, and can take either an action or a bonus action on its turn, not both."
+    },
+    {
+      "roll": 5,
+      "name": "Enervation Ray",
+      "description": "The targeted creature must make a DC 20 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one."
+    },
+    {
+      "roll": 6,
+      "name": "Telekinetic Ray",
+      "description": "If the target is a creature, it must succeed on a DC 20 Strength saving throw or the beholder moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the beholder's next turn."
+    },
+    {
+      "roll": 7,
+      "name": "Sleep Ray",
+      "description": "The targeted creature must succeed on a DC 20 Wisdom saving throw or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it."
+    },
+    {
+      "roll": 8,
+      "name": "Petrification Ray",
+      "description": "The targeted creature must make a DC 20 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn."
+    },
+    {
+      "roll": 9,
+      "name": "Disintegration Ray",
+      "description": "If the target is a creature, it must succeed on a DC 20 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust."
+    },
+    {
+      "roll": 10,
+      "name": "Death Ray",
+      "description": "The targeted creature must succeed on a DC 20 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 14 (4d6) piercing damage."
+    },
+    {
+      "name": "Eye Stalks",
+      "description": "Roll 3 times on eye stalk table. Each eye stalk can target a creature of the DM's choice."
+    }
+  ],
+  "lairActions": [
+    {
+      "name": "Slimy Ground",
+      "description": "A 50-foot-square area of ground within 120 feet of the beholder becomes slimy; that area is difficult terrain until initiative count 20 on the next round."
+    },
+    {
+      "name": "Grasping Walls",
+      "description": "Walls within 120 feet of the beholder sprout grasping appendages until initiative count 20 on the round after next. Each creature of the beholder's choice that starts its turn within 10 feet of such a wall must succeed on a DC 15 Dexterity saving throw or be grappled. Escaping requires a successful DC 15 Strength (Athletics) or Dexterity (Acrobatics) check."
+    },
+    {
+      "name": "Eye Ray",
+      "description": "An eye opens on a solid surface within 60 feet of the beholder. One random eye ray of the beholder shoots from that eye at a target of the beholder's choice that it can see. The eye then closes and disappears."
+    }
+  ],
+  "legendaryResistances": [
+    { "used": false },
+    { "used": false },
+    { "used": false },
+    { "used": false }
+  ],
+  "legendaryActions": [
+    {
+      "name": "Eye Ray",
+      "description": "The beholder uses one random eye ray."
+    },
+    {
+      "name": "Move at Double Speed",
+      "description": "The beholder can move at double its speed."
+    },
+    {
+      "name": "Use Magical Ring Abilities",
+      "description": "The beholder can activate any magical ring abilities it possesses."
+    },
+    {
+      "name": "Eye Stalk Utility",
+      "description": "The beholder can use an eye stalk to perform a utility effect that does not target player characters."
+    }
+  ],
+  "legendaryActionCount": 0,
+  "inventory": [
+    {
+      "name": "Ring of Evasion",
+      "description": "Grants 3x auto-success for Dexterity saving throws on failures.",
+      "equipped": true,
+      "charges": 3
+    },
+    {
+      "name": "Ring of X-Ray Vision",
+      "description": "Allows the wearer to see through walls.",
+      "equipped": true
+    },
+    {
+      "name": "Ring of Protection",
+      "description": "Increases AC and saving throws.",
+      "effect": {
+        "type": "adjustStats",
+        "adjustment": {
+          "ac": 3,
+          "savingThrows": {
+            "strength": 3,
+            "dexterity": 3,
+            "constitution": 3,
+            "intelligence": 3,
+            "wisdom": 3,
+            "charisma": 3
+          }
+        }
+      },
+      "equipped": true
+    },
+    {
+      "name": "Ring of Regeneration",
+      "description": "Any eye stalks cut off regenerate at the start of the next round.",
+      "equipped": true,
+      "effect": {
+        "type": "regenerate",
+        "amount": "2d6"
+      }
+    },
+    {
+      "name": "Ring of Mind Shielding",
+      "description": "Immune to magic that allows other creatures to read your thoughts.",
+      "equipped": true
+    },
+    {
+      "name": "Ring of Spell Turning",
+      "description": "Advantage on saving throws against spells that target only the beholder.",
+      "equipped": true
+    },
+    {
+      "name": "Ring of Invisibility",
+      "description": "Allows the wearer to turn invisible as an action.",
+      "equipped": true
+    },
+    {
+      "name": "Ring of Djinni Summoning",
+      "description": "Summons an ally (requires 1 charge). Recognizes the party as being from the wizard’s tower.",
+      "equipped": true,
+      "charges": 1
+    }
+  ]
+}
