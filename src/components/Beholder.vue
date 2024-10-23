@@ -42,10 +42,10 @@
             <div style="padding: 1rem;">
               <div class="legendary-resistances">
                 <h2>Legendary Resistances</h2>
-                <div v-for="(resistance, index) in beholder.legendaryResistances" :key="index">
+                <div v-for="(index) in beholder.legendaryResistances" :key="index">
                   <label>
-                    <input type="checkbox" v-model="resistance.used" />
-                    Resistance {{ index + 1 }}
+                    <input type="checkbox" @change="(event) => { if (event.target.checked) { event.target.disabled = true; } }" />
+                    Resistance {{ index }}
                   </label>
                 </div>
               </div>

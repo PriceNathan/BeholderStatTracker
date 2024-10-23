@@ -10,6 +10,7 @@
     "wisdom": { "value": 15, "save": 7 },
     "charisma": { "value": 17, "save": 8 }
   },
+  "legendaryResistances": 4,
   "eyeRays": [
     {
       "roll": 1,
@@ -85,12 +86,6 @@
       "name": "Eye Ray",
       "description": "An eye opens on a solid surface within 60 feet of the beholder. One random eye ray of the beholder shoots from that eye at a target of the beholder's choice that it can see. The eye then closes and disappears."
     }
-  ],
-  "legendaryResistances": [
-    { "used": false },
-    { "used": false },
-    { "used": false },
-    { "used": false }
   ],
   "legendaryActions": [
     {
