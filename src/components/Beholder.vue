@@ -54,7 +54,7 @@
                 <h2>Legendary Actions</h2>
                 <div v-for="(action, index) in beholder.legendaryActions" :key="index">
                   <label>
-                    <input type="checkbox" v-model="action.used" />
+                    <input type="checkbox" v-model="action.used" :disabled="!canUseLegendaryAction" />
                     {{ action.name }}: {{ action.description }}
                   </label>
                 </div>
@@ -238,6 +238,14 @@ export default {
       this.beholder.hp += change; // Directly add or subtract from current HP
       this.hpChange = 0; // Reset input
     },
+  },
+  computed: {
+    canUseLegendaryAction() {
+      //get count of legendary actions that have been used
+      const usedActions = this.beholder.legendaryActions.filter(action => action.used).length;
+      return usedActions < this.beholder.legendaryActionCount;
+
+    }
   }
 }
 </script>
