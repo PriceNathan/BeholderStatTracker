@@ -9,8 +9,8 @@
               <h2 class="hp-label">HP: {{ beholder.hp }} / {{ maxHp }}</h2>
               <div class="hp-controls">
                 <div>
-                  <input type="number" v-model="hpChange" placeholder="Change HP" />
                   <button @click="updateHP(true)">+</button>
+                  <input type="number" v-model="hpChange" placeholder="Change HP" />
                   <button @click="updateHP(false)">-</button>
                 </div>
               </div>
